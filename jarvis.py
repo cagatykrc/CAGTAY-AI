@@ -30,7 +30,7 @@ isim= "Jarvis"
 
 
 
-#Cedy Konuşur
+#AI speaking 
 def speak(audio):
 	engine.say(audio)
 	engine.runAndWait()
@@ -40,7 +40,7 @@ def speak(audio):
 
 
 
-#WishMe fonksiyonu Cedy'nin karşılaması içindir
+#Wish me
 def wishMe():
 	hour = int(datetime.datetime.now().hour)
 	
@@ -60,7 +60,7 @@ def wishMe():
 
 
 
-#Cedy senin kelimelerini yazıya dönüştrür
+#AI turns what you say into text
 def takeCommand():
 	mixer.music.play()
 	#it takes microphone input from user and returns string output
@@ -113,7 +113,7 @@ def CallName():
 
 
 wishMe()
-def JARVIS():
+def AI():
 	
 	query = takeCommand().lower()
 	if 'open youtube' in query:
@@ -139,9 +139,10 @@ def JARVIS():
 	elif (query== 'yaşın kaç') or ('Kaç yaşındasın' in query):
 		speak("1 yaşındayım efendim")
 
-JARVIS()
+AI()
 
+#AI waiting for you to call
 while True:
 		query = CallName().lower()
 		if query == "hey":
-			JARVIS()
+			AI()
