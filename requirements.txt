@@ -1,0 +1,14 @@
+gTTS
+SpeechRecognition
+pyttsx3
+speedtest-cli
+pyautogui
+pygame
+datetime
+webbrowser
+os
+time
+socket
+random
+BeautifulSoup4
+pyaudio
