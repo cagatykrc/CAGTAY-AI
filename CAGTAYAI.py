@@ -21,19 +21,14 @@ currentMouseX, currentMouseY = pyautogui.position()
 
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty('voices')
-# your computer default voice
 engine.setProperty('voice', voices[0].id)
-# AI Calling Name
 name = "CAGATAY"
 
-
-# AI speaking
 def speak(audio):
 	engine.say(audio)
 	engine.runAndWait()
 
 
-# Wish me
 def wishMe():
 	hour = int(datetime.datetime.now().hour)
 
@@ -49,10 +44,8 @@ def wishMe():
 	speak("Buyrun size nasıl yardımcı olabilirim?")
 
 
-# AI turns what you say into text
 def takeCommand():
 	mixer.music.play()
-	# it takes microphone input from user and returns string output
 	r = sr.Recognizer()
 	with sr.Microphone() as source:
 		print("Dinleniyor...")
@@ -74,7 +67,6 @@ def takeCommand():
 
 
 def CallName():
-	# it takes microphone input from user and returns string output
 	r = sr.Recognizer()
 	with sr.Microphone() as source:
 		print("Dinleniyor...")
@@ -108,7 +100,6 @@ def AI():
 		speak('opening google..')
 		query = query.replace('according to google', '')
 		webbrowser.open("http://google.com/#q="+query, new=2)
-	#Doing Speed Test
 	elif 'internet hız testi yap' in query:
 		st = speedtest.Speedtest()
 		speak("indirme hızınız hesaplanıyor lütfen bekleyin")
@@ -133,7 +124,6 @@ def AI():
 
 AI()
 
-# AI waiting for you to call
 while True:
 	query = CallName().lower()
 	if query == "hey":
